@@ -7,8 +7,11 @@
 @import url("css/simple-grid.css");
 @import url("css/kboard-css.css");
 
+main.honey_process {padding: 100px 0;}
+/* 삭제 필요한거 */
+.quick_bar_section {height: 1600px;}
 /* 애니메이션 */
-.view_ani {opacity: 0;}
+/* .view_ani {opacity: 0;} */
 .flex-align {display: flex; flex:-moz-flex; flex:-webkit-flex;}
 .animated {
   -webkit-animation-duration: 1s;
@@ -42,6 +45,17 @@
 #main_header.active .honey_bee  {right:-15px; top: -10px; transition: 0.5s;}
 #mobile_btn {display: none; position: absolute; right:5%; top:20px; color:var(--bg-right-gray); opacity: 0.7;}
 #mobile_btn.turn {color:var(--dark-black); opacity: 1;}
+
+/* qucik_bar */
+.qucik_wrap { /*height: 100vh;*/ margin: 50vh 0;  position: absolute; z-index: 333; right:0; }
+.qucik_wrap ul.qucik_list { overflow: hidden; margin-right: 20px; position: absolute; right: 0; top: 50vh; transform: translateY(-50%); background: #fafafa;; border-radius: 8px;}
+.qucik_wrap ul.qucik_list:hover {box-shadow: var(--box_shadow); transition: .3s; background-color: #fff;}
+.qucik_wrap ul.qucik_list li:hover {background-color: var(--bg-right-gray); box-shadow:0 0 5px 0 rgba(0, 0, 0, 0.2) }
+.qucik_wrap ul.qucik_list li { padding: 10px; transition: .3s; text-align: center;}
+.qucik_wrap ul.qucik_list:first-child li {}
+.qucik_wrap ul.qucik_list li.up_btn {padding: 8px;}
+.qucik_wrap ul.qucik_list li a {font-size: 14px; font-weight: bold;}
+.qucik_wrap ul.qucik_list li a i {display: block; color:var(--dark-black);}
 
 .swiper-container { width: 100%;height: 100vh;}
 .swiper-container .swiper-wrapper { position: relative;}
@@ -87,9 +101,9 @@ div.swiper-container-horizontal>.swiper-pagination-bullets, .swiper-pagination-c
 .main_grow > div .col-7 .bg_cover:before { content: ''; position: absolute; left:-30px; top:-25px; width: 100%; height:100%; z-index: 2; background:url('images/dot-bg.png') no-repeat center/cover;  transition: .3s;}
 .main_grow > div .col-7 .bg_cover:after { content: ''; position: absolute; right:-30px; top: 25px; width: 100%; height:100%; border: 4px solid var(--point-rgb-color); z-index: -1; transform: skew(-2deg, 3deg); transition: .3s;}
 
-.main_grow > div .col-7:hover .bg_cover:after .border_card span.q{transform: skew(2deg, -3deg); z-index: -1;}
+/* .main_grow > div .col-7:hover .bg_cover:after .border_card span.q{transform: skew(2deg, -3deg); z-index: -1;}
 .main_grow > div .col-7:hover .bg_cover {transform: skew(2deg, -3deg);z-index: 6;}
-.main_grow > div .col-7:hover .bg_cover {transform: skew(2deg, -3deg);z-index: 6;}
+.main_grow > div .col-7:hover .bg_cover {transform: skew(2deg, -3deg);z-index: 6;} */
 .main_grow .talk {color:var(--point-color) !important; font-size: 20px; text-align: center; margin: 40px 0;}
 
 
@@ -124,17 +138,17 @@ footer .grid_row > div.footer_service h2 {font-size: 27px; position: relative; z
 footer .grid_row > div p {font-size: 16px; text-align: left; opacity: 0.8; color:inherit; line-height: 1.8; font-size: 14px;}
 footer .footer_bottom {border-top: 1px solid var(--gray); padding: 60px 0;}
 footer .footer_bottom h2 { font-size: 34px;}
-footer .skew_line:after {    transform: skew(-3deg, 3deg); left:50%; transform: translateX(-50%); width: 80%;}
+/* footer .skew_line:after {    transform: skew(-3deg, 3deg); left:50%; transform: translateX(-50%); width: 80%;} */
 footer .grid_row > div.footer_contact p,footer .grid_row > div.footer_about p  {padding-left: 13px; text-align: left; word-break: keep-all; position: relative;}
 footer .grid_row > div.footer_contact p:before,footer .grid_row > div.footer_about p:before { content: '-'; position: absolute; left:0;}
 
 /* slider2 section3*/
 #main_slider2{overflow: hidden; padding: 80px 0; max-width: 1150px; margin: 0 auto;}
 .swiper-container2 { width: 100%; height: 100%; position: relative;}
+.sldier_imgBox::before,.layer_imgBox:before {content: ''; position: absolute; left:-30px; top:-25px; width: 100%; height:100%; z-index: 2; background:url('images/dot-bg.png') repeat center;  transition: .3s; z-index:5; opacity: 0.6;}
 .sldier_imgBox,.layer_imgBox{background-color: var(--bg-right-gray);  width: 380px; line-height: 460px; background:  linear-gradient(rgba(0,0,0,.2), rgba(0,0,0,.2)),url('images/grow_right.jpg') no-repeat center/cover; position: relative; transition: .4s; z-index: 10;}
-.layer_imgBox {height: 460px;}
-.sldier_imgBox::before,.layer_imgBox:before {content: ''; position: absolute; left:-30px; top:-25px; width: 100%; height:100%; z-index: 2; background:url('images/dot-bg.png') no-repeat center/cover;  transition: .3s;}
-.sldier_imgBox:after,.layer_imgBox:after {content: ''; position: absolute; left: -40px top: 25px; width: 100%; height:100%; border: 4px solid var(--point-rgb-color); z-index: -1; transform: skew(-2deg, -3deg); transition: .3s;}
+.layer_imgBox {height: 460px; position: relative; z-index: 10;}
+.sldier_imgBox:after,.layer_imgBox:after {content: ''; position: absolute; left: -40px top: 25px; width: 100%; height:100%; border: 4px solid var(--point-rgb-color); z-index: -1; /*transform: skew(-2deg, -3deg);*/ transition: .3s;}
 .sldier_imgBox img {vertical-align: middle;}
 .swiper-slide .subtitle {font-size: 21px;}
 
@@ -168,8 +182,7 @@ main.about_us .about_abven h3 .tag {vertical-align: top; color:var(--point-color
 main.about_us .about_abven p { color:var(--bg-right-gray); max-width: 240px; margin: 0 auto;}
 main.about_us .our_team {padding: 80px 0 100px 0;}
 main.about_us .our_team .section_heading {margin-bottom: 40px;}
-main.about_us .our_team .grid_row .col-4 .promise_sentence {padding:35px; margin-top: 90%;}
-main.about_us .our_team .grid_row .col-4 .promise_sentence p { font-size: 18px; max-width: 75%; color:var(--dark-black);}
+main.about_us .our_team .layer_imgBox { background: linear-gradient(rgba(0,0,0,.2), rgba(0,0,0,.2)),url(images/honey_member.jpg) no-repeat center/cover; max-width: 800px; width: auto;}
 
 /* map & contact */
 main.contact_us {padding-top: 100px}
@@ -200,10 +213,21 @@ section.card_qna {margin-bottom: 50px;}
   section.partner_reports article .small_heading {margin: 15px 0;}
   section.partner_reports article .small_heading h2 {font-size: 20px; color:var(--ft-color); padding: 0; line-height: 2;}
   section.partner_reports article {padding-bottom: 40px;}
-  section.partner_reports article .border_box {height: 200px}
+  section.partner_reports article .border_box {height: 200px}\
 
+  /* product_process */
+  /* 안되서 맨위에 올림 main.honey_process {padding: 100px 0;}  */
+  section.honey_steps .grid_row .col-8 {padding-left: 30px;}
+  section.honey_steps .grid_row.step {margin-bottom: 60px; position: relative;}
+  section.honey_steps .grid_row.step .col-4 {position: relative;}
+  section.honey_steps .grid_row.step .col-4:after {content: ''; position: absolute;bottom: 0; height: 73px;  border-left: 3px dotted var(--ft-color); bottom:-73px; left:50%;}
+  section.honey_steps .grid_row.step:last-child .col-4:after {display: none;}
+  section.honey_steps .grid_row [class^="col"] .layer_imgBox {height: 260px;}
+  section.honey_steps .grid_row [class^="col"] .card .card_overlay p { color:var(--dark-black); font-size: 18px; vertical-align: top; display: inline-block; font-size: 14px; margin-left: 8px;}
+  section.honey_steps .grid_row [class^="col"] .card .card_overlay span {font-size: 25px;}
+  section.honey_steps .grid_row:hover [class^="col"] .card .card_overlay {height: 230px; padding-top: 40px;}
 
-/* media */
+/************************************************************************** media **********************************************************************************************/
 @media (max-width:900px) {
   #mobile_btn {display: block;}
   .grid_row [class^="col"] { margin: 0; padding: 5%; width: 100%;}
@@ -240,13 +264,8 @@ section.card_qna {margin-bottom: 50px;}
   footer .grid_row > div h2 {text-align: center !important;}
   footer .grid_row > div p { text-align: center;}
   footer .grid_row .skew_line:after { width: 80%; left: 5%; height: 70%;}
-  footer .skew_line:after {left:0; transform: translate(5%,60px);}
+  /* footer .skew_line:after {left:0; transform: translate(5%,60px);} */
   /* about */
-  main.about_us .our_team .grid_row .col-4 .promise_sentence { padding: 10px;}
-  main.about_us .our_team .grid_row .col-4 .promise_sentence p { max-width: 85%;}
-  main.about_us .our_team .grid_row .col-4 {text-align: center;}
-  main.about_us .our_team .grid_row .col-4 .card {display: inline-block;}
-  main.about_us .our_team .grid_row .col-4 .card .card_overlay {left:0; }
   /* qna */
   .card_qna .grid_row .border_card {width: 85%; display: block; float: none; margin: 0 auto;}
   .card_qna .grid_row .col-3 {margin-bottom: 30px;}
@@ -255,3 +274,4 @@ section.card_qna {margin-bottom: 50px;}
   section.contact_form {flex-direction: column; flex-wrap: wrap; margin: 0 5%;}
   main.partner {padding: 100px 5%;}
 }
+/************************************************************************** media end **********************************************************************************************/

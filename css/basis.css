@@ -62,7 +62,7 @@ body::-webkit-scrollbar-thumb,div::-webkit-scrollbar-thumb { background-color: v
 .line_down:after {content: ''; position: absolute; bottom:0; width: 100%; height: 6px; background-color: var(--point-color); z-index: -1; left:0; transition: 0.3s ease;  z-index: -1; bottom: 50%; transform: translateY(50%);}
 .line_down:hover:after{padding: 10px 0;}
 .skew_line {position: relative;}
-.skew_line:after {content: ''; position: absolute; right:-30px; top: 25px; width: 100%; height:100%; border: 4px solid var(--point-rgb-color); z-index: -1; transform: skew(0deg, 3deg); transition: .3s; z-index: 10;}
+.skew_line:after {content: ''; position: absolute; right:-30px; top: 25px; width: 100%; height:100%; border: 4px solid var(--point-rgb-color); z-index: -1; /*transform: skew(0deg, 3deg);*/ transition: .3s; z-index: 10;}
 
 .border_box { width: 100%; height: 130px; border: 1px solid var(--border); border-radius: 8px; transition: .3s;}
 .border_box:hover {border: 1px solid var(--point2);}
@@ -149,7 +149,7 @@ label.attr-name {margin-bottom: 10px; display: inline-block; }
 /* card 3분할 overlay 있는거*/
 .card_cover { padding: 0 16px;}
 .card {max-width: 310px; width:auto; height: 400px; background-color: var(--bg-right-gray); position: relative; overflow: hidden;}
-.card .card_overlay { font-size: 18px; font-weight: bold; line-height: 1; padding: 8px 15px; background-color: var(--point-rgb-color); position: absolute; left:0 bottom:0; width: 100%; clip-path: polygon(0 0, 100% 0, 100% 29%, 0 46%); height: 100px; transition: 0.3s;}
+.card .card_overlay { font-size: 18px; font-weight: bold; line-height: 1; padding: 8px 15px; background-color: var(--point-rgb-color); position: absolute; left:0 bottom:0; width: 100%; clip-path: polygon(0 0, 100% 0, 100% 29%, 0 46%); height: 100px; transition: 0.3s; height: 180px; }
 .card:hover .card_overlay {height: 230px; clip-path: polygon(0 0, 100% 0, 100% 33%, 0 61%); }
 
 /* border-line card & shodow*/

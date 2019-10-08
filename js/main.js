@@ -8,18 +8,27 @@ $(document).ready(function() {
   //   drop_logo.classList.add('animated', 'bounceInDown');
   // }
 
-  // main menu Scroll
-  //메인 메뉴 스크롤
-
-
+  // main  quick_bar
+  var quick = $('.qucik_wrap ul');
   // main menu Script
   var main_header = $('#main_header');
   var main_header_height = $('#main_header').innerHeight();
   var mobile_btn = $('#mobile_btn');
   var drop_menu = $('#main_header nav ul');
   var isNavTurn;
+  // main animation
+  var view_target = $('.view_ani');
+  const view_target2 = document.querySelectorAll('.view_ani');
+  var start = true;
+  var idx = 0;
+  var ani_info = ["animated", "fadeInUp"];
+
+  document.querySelector('.up_btn').addEventListener("click",function(){
+    window.scrollTo(0,0);
+  });
 
   init();
+
   function init() {
     console.log("초기화");
     isNavTurn = false;
@@ -28,6 +37,12 @@ $(document).ready(function() {
 
   $(window).scroll(function() {
     var top = this.scrollY;
+    quickBar_pos(top);
+    menu_scroll_ani(top);
+    // content_visible_ani();
+  });
+
+  function menu_scroll_ani(top) {
     if (main_header_height < top && main_header.hasClass('active') == false) {
       main_header.addClass('active');
       isNavTurn = true;
@@ -38,7 +53,30 @@ $(document).ready(function() {
       isNavTurn = false;
       turnColor(mobile_btn);
     }
-  });
+  }
+
+  function content_visible_ani() {
+    $('.bg_cover').toggleClass('active');
+    if (start) {
+      if ($(window).scrollTop() + ($(window).innerHeight() * 0.5) > view_target.eq(idx).offset().top) {
+        console.log('애니메이션 타켓:' + idx);
+        view_target2[idx].classList.add(ani_info[0], ani_info[1]);
+        idx++;
+        // view_target2[idx-1].classList.remove(ani_info[0],ani_info[1]);
+        if (idx == view_target.length) {
+          start = false;
+          console.log("애니메이션이 끝났습니다");
+        }
+      };
+    }
+  }
+
+  function quickBar_pos(scrollY) {
+    // cosole.log("scrolly 값"+scrollY);
+    quick.stop().animate({
+      top: scrollY
+    }, 400);
+  }
 
   mobile_btn.click(function(event) {
     event.preventDefault();
@@ -47,11 +85,9 @@ $(document).ready(function() {
   });
 
   function turnColor(target) {
-    if(isNavTurn) {
-      console.log("아이콘 : 블랙색상");
+    if (isNavTurn) {
       target.addClass('turn');
     } else {
-      console.log("아이콘 : 화이트색상");
       target.removeClass('turn');
     }
   }
@@ -68,12 +104,6 @@ $(document).ready(function() {
     }
   }
 
-  function heightAnimate(target) {
-
-  }
-  // main menu Script end
-
-
   var main_swiper = new Swiper('.swiper-container', {
     speed: 600,
     pagination: {
@@ -89,7 +119,7 @@ $(document).ready(function() {
 
   var swiper = new Swiper('.swiper-container2', {
     speed: 600,
-    parallax: true,
+    parallax: false,
     pagination: {
       el: '.swiper-pagination2',
       clickable: true,
@@ -98,54 +128,8 @@ $(document).ready(function() {
       nextEl: '.swiper-button-next2',
       prevEl: '.swiper-button-prev2',
     },
-    autoplay: {
-      delay: 3000,
-    }
+    // autoplay: {
+    //   delay: 3000,
+    // }
   });
-
-  // acodian
-  var acodian_btn = $('.acodian_list > li');
-  var acodian_pannel = acodian_btn.find('.acodian_pannel');
-  var acodian_arrow = acodian_btn.find('i');
-
-  acodian_btn.click(function(event) {
-    event.preventDefault();
-
-    acodian_arrow.attr('class', 'xi-angle-down-thin xi-x');
-    var idx = acodian_btn.index(this);
-
-    if (acodian_btn.eq(idx).hasClass('active')) {
-      acodian_btn.eq(idx).removeClass('active');
-    } else {
-      acodian_btn.removeClass('active');
-      acodian_arrow.eq(idx).attr('class', 'xi-angle-up-thin xi-x');
-      acodian_btn.eq(idx).addClass('active');
-    }
-  });
-
-  // main animation
-  var view_target = $('.view_ani');
-  const view_target2 = document.querySelectorAll('.view_ani');
-  var start = true;
-  var idx = 0;
-  var ani_info = ["animated", "fadeInUp"];
-
-  $(window).scroll(function(event) {
-    $('.bg_cover').toggleClass('active');
-    if (start) {
-      if ($(window).scrollTop() + ($(window).innerHeight() * 0.5) > view_target.eq(idx).offset().top) {
-        console.log('애니메이션 타켓:' + idx);
-        view_target2[idx].classList.add(ani_info[0], ani_info[1]);
-        idx++;
-
-        if (idx == view_target.length) {
-          start = false;
-          console.log("애니메이션이 끝났습니다");
-        }
-
-      };
-      // view_target2[idx].classList.toggle(ani_info[0],ani_info[1]);
-    }
-  });
-
 });

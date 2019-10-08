@@ -1,64 +1,45 @@
-.animated {
-  -webkit-animation-duration: 1s;
-  animation-duration: 1s;
-  -webkit-animation-fill-mode: both;
-  animation-fill-mode: both;
-}
+<div class="grid_row margin_width">
+  <div class="col-4  ">
+    <div class="card">
+      <span class="card_overlay">
+        MASTER
+      </span>
+      <div class="promise_sentence">
+        <p>고객 만족을 위해 노력합니다.</p>
+      </div>
+    </div>
 
-@-webkit-keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
+  </div>
+  <div class="col-4  ">
+    <div class="card">
+      <span class="card_overlay">
+        MASTER
+      </span>
+      <div class="promise_sentence">
+        <p>고객 만족을 위해 노력합니다.</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-4  ">
+    <div class="card">
+      <span class="card_overlay">
+        MASTER
+      </span>
+      <div class="promise_sentence">
+        <p>고객 만족을 위해 노력합니다.</p>
+      </div>
+    </div>
+  </div>
+</div>
 
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
-}
-
-.fadeIn {
-  -webkit-animation-name: fadeIn;
-  animation-name: fadeIn;
-}
-
-@-webkit-keyframes fadeInUp {
-  from {
-    opacity: 0;
-    -webkit-transform: translate3d(0, 25%, 0);
-    transform: translate3d(0, 25%, 0);
-  }
-
-  to {
-    opacity: 1;
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-  }
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    -webkit-transform: translate3d(0, 50%, 0);
-    transform: translate3d(0, 50%, 0);
-  }
-
-  to {
-    opacity: 1;
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-  }
-}
-
-.fadeInUp {
-  -webkit-animation-name: fadeInUp;
-  animation-name: fadeInUp;
-}
+<style >
+  <!-- 미디어쿼리 -->
+  main.about_us .our_team .grid_row .col-4 .promise_sentence { padding: 10px;}
+  main.about_us .our_team .grid_row .col-4 .promise_sentence p { max-width: 85%;}
+  main.about_us .our_team .grid_row .col-4 {text-align: center;}
+  main.about_us .our_team .grid_row .col-4 .card {display: inline-block;}
+  main.about_us .our_team .grid_row .col-4 .card .card_overlay {left:0; }
+  <!-- 일반 css -->
+  main.about_us .our_team .grid_row .col-4 .promise_sentence {padding:35px; margin-top: 90%;}
+  main.about_us .our_team .grid_row .col-4 .promise_sentence p { font-size: 18px; max-width: 75%; color:var(--dark-black);}
+</style>

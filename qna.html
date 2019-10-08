@@ -15,6 +15,32 @@
   <script src="js/main.js" charset="utf-8"></script>
   <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
 
+  <script type="text/javascript">
+    $(document).ready(function() {
+
+        // acodian
+        var acodian_btn = $('.acodian_list > li');
+        var acodian_pannel = acodian_btn.find('.acodian_pannel');
+        var acodian_arrow = acodian_btn.find('i');
+
+        acodian_btn.click(function(event) {
+          event.preventDefault();
+
+          acodian_arrow.attr('class', 'xi-angle-down-thin xi-x');
+          var idx = acodian_btn.index(this);
+
+          if (acodian_btn.eq(idx).hasClass('active')) {
+            acodian_btn.eq(idx).removeClass('active');
+          } else {
+            acodian_btn.removeClass('active');
+            acodian_arrow.eq(idx).attr('class', 'xi-angle-up-thin xi-x');
+            acodian_btn.eq(idx).addClass('active');
+          }
+        });
+
+    });
+  </script>
+
   <title>Document</title>
 </head>
 
@@ -30,10 +56,14 @@
       </h1>
       <i id="mobile_btn" class="xi-align-right xi-2x"></i>
       <ul>
-        <li><a class="active" href="/">main</a></li>
         <li><a href="about_us.html">about</a></li>
         <li><a href="gallery.html">product</a></li>
-        <li><a href="qna.html">help</a></li>
+        <li><a href="honey_process.html">process</a></li>
+        <li><a href="review.html">review</a></li>
+        <li><a href="magazine.html">magazine</a></li>
+        <li><a href="partner.html"></a></li>
+        <li><a href="qna.html" class="active">help</a></li>
+        <li><a href="notice.html">notice</a></li>
         <li><a href="contact.html">contact</a></li>
       </ul>
     </nav>
