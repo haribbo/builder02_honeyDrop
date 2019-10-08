@@ -7,10 +7,25 @@
 @import url("css/simple-grid.css");
 @import url("css/kboard-css.css");
 
-
-/* 본문 애니메이션 */
+/* 애니메이션 */
 .view_ani {opacity: 0;}
 .flex-align {display: flex; flex:-moz-flex; flex:-webkit-flex;}
+.animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+@-webkit-keyframes fadeIn {
+  from {opacity: 0;} to {opacity: 1;}}
+@keyframes fadeIn {from {opacity: 0;} to { opacity: 1;}}
+.fadeIn {-webkit-animation-name: fadeIn; animation-name: fadeIn;}
+@-webkit-keyframes fadeInUp {
+  from {opacity: 0; -webkit-transform: translate3d(0, 25%, 0); transform: translate3d(0, 25%, 0);}
+  to { opacity: 1; -webkit-transform: translate3d(0, 0, 0); transform: translate3d(0, 0, 0);}}
+@keyframes fadeInUp {from {opacity: 0; -webkit-transform: translate3d(0, 50%, 0); transform: translate3d(0, 50%, 0);} to { opacity: 1; -webkit-transform: translate3d(0, 0, 0); transform: translate3d(0, 0, 0);}}
+.fadeInUp { -webkit-animation-name: fadeInUp; animation-name: fadeInUp;}
+
 /* 본문 애니메이션 end*/
 
 #main_header {background-color: transparent; position: absolute; z-index: 999; width: 100%; transition: .3s;}
@@ -174,13 +189,18 @@ section.map { width: 100%; height: 500px; background-color: var(--bg-right-gray)
 main.qna {margin: 100px 0;}
 section.card_qna {margin-bottom: 50px;}
 /* section.qna_acodian_cover .global_pagination {margin-top: 50px;} */
-
-
 /* slider css */
-
  .swiper-container .swiper-slide { text-align: center; font-size: 18px; background: #fff;
-  /* Center slide text vertically */ display: -webkit-box; display: -ms-flexbox; display: -webkit-flex; display: flex; -webkit-box-pack: center; -ms-flex-pack: center;-webkit-justify-content: center; justify-content: center; -webkit-box-align: center; -ms-flex-align: center; -webkit-align-items: center; align-items: center;
-}
+  /* Center slide text vertically */ display: -webkit-box; display: -ms-flexbox; display: -webkit-flex; display: flex; -webkit-box-pack: center; -ms-flex-pack: center;-webkit-justify-content: center; justify-content: center; -webkit-box-align: center; -ms-flex-align: center; -webkit-align-items: center; align-items: center;}
+  /* partner */
+  main.partner {padding: 100px 0;}
+  section.partner_list {padding-bottom: 50px;}
+  section.partner_list .grid_row [class^="col"] {margin-bottom: 30px;}
+  section.partner_reports {padding: 80px 0;}
+  section.partner_reports article .small_heading {margin: 15px 0;}
+  section.partner_reports article .small_heading h2 {font-size: 20px; color:var(--ft-color); padding: 0; line-height: 2;}
+  section.partner_reports article {padding-bottom: 40px;}
+  section.partner_reports article .border_box {height: 200px}
 
 
 /* media */
@@ -233,4 +253,5 @@ section.card_qna {margin-bottom: 50px;}
   /* contact */
   main.contact_us {}
   section.contact_form {flex-direction: column; flex-wrap: wrap; margin: 0 5%;}
+  main.partner {padding: 100px 5%;}
 }
