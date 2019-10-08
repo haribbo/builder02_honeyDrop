@@ -86,7 +86,7 @@ main.qna_content,div.qna_content {transition: .2s; }
 .qna ul.acodian_list { max-width: 1000px; margin: 0 auto;}
 .qna ul.acodian_list li {position: relative;}
 .qna ul.acodian_list li > a {display: inline-block; width: 100%; height: 100%; border-bottom:  1px solid var(--border);}
-.qna ul.acodian_list li a span {font-size: 25px; font-weight: bold; color:var(--point-color); display: inline-block; margin: 0 20px; line-height: 55px;}
+.qna ul.acodian_list li a span {font-size: 25px; font-weight: bold; color:var(--point-color); display: inline-block; margin: 0 20px;}
 .qna ul.acodian_list li a h3 {display: inline-block; font-size: 20px;}
 .qna ul.acodian_list li a i { font-size: 20px; float: right; display: block; position: absolute; right:0; top:20px; margin-right: 20px;}
 .qna ul.acodian_list li div.acodian_pannel {padding: 0 20px; background-color: #fafafa; overflow: hidden; height: 0; transition: .3s ease; }

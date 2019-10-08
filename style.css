@@ -5,8 +5,6 @@
 @import url("css/default.css");
 @import url("css/basis.css");
 @import url("css/simple-grid.css");
-
-@import url("css/slider2.css");
 @import url("css/kboard-css.css");
 
 
@@ -38,9 +36,12 @@
 .swiper-container .swiper-wrapper .swiper-slide .swiper_slide_txtBox {position: absolute; left:0; top: 100px; max width: 1000px; left:50%; transform: translateX(-50%); text-align: left; z-index: 10; font-size: 80px; color:var(--ft-white); height: 300px; top:30vh; line-height: 1;}
 .swiper-container .swiper-wrapper .swiper-slide .swiper_slide_txtBox h2 {color:inherit;; font-size: 0.8em;}
 .swiper-container .swiper-wrapper .swiper-slide .swiper_slide_txtBox p {font-size: 40px; font-size:inherit; color:inherit;}
+.swiper-container .swiper-wrapper .swiper-slide .swiper_slide_txtBox p.desc {font-size: 16px; font-weight: normal;}
 .swiper-container .swiper-wrapper .swiper-slide img {width: 100%;}
 div.swiper-container-horizontal>.swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction {bottom: 50px; z}
 .swiper-slide-active .swiper_slide_txtBox {animation-delay: 1s; -webkit-animation-name: fadeIn; animation-name: fadeIn; animation-duration: 1s; animation-fill-mode: backwards;}
+/* slide images */
+.swiper-container .swiper-wrapper .swiper-slide {background: url('images/main-slide1.jpg')no-repeat center right/cover; object-fit: cover;}
 
 .honey_bee {position: absolute; z-index: 999; right:-15px; top: -20px; display: inline-block; width: 32px; height: 32px; animation-iteration-count: infinite; animation-delay: 0.1s;}
 /* background: url('../images/bee.png') no-repeat center/cover; top:16px; */
@@ -105,9 +106,12 @@ footer .grid_row > div h2 {color:inherit !important; font-size: 22px; margin-bot
 footer .grid_row > div.footer_service {text-align: center;}
 footer .grid_row > div.footer_service .call {font-size: 18px; text-align: center;}
 footer .grid_row > div.footer_service h2 {font-size: 27px; position: relative; z-index: 50;}
-footer .grid_row > div p {font-size: 16px; text-align: left; opacity: 0.8; color:inherit;}
+footer .grid_row > div p {font-size: 16px; text-align: left; opacity: 0.8; color:inherit; line-height: 1.8; font-size: 14px;}
 footer .footer_bottom {border-top: 1px solid var(--gray); padding: 60px 0;}
 footer .footer_bottom h2 { font-size: 34px;}
+footer .skew_line:after {    transform: skew(-3deg, 3deg); left:50%; transform: translateX(-50%); width: 80%;}
+footer .grid_row > div.footer_contact p,footer .grid_row > div.footer_about p  {padding-left: 13px; text-align: left; word-break: keep-all; position: relative;}
+footer .grid_row > div.footer_contact p:before,footer .grid_row > div.footer_about p:before { content: '-'; position: absolute; left:0;}
 
 /* slider2 section3*/
 #main_slider2{overflow: hidden; padding: 80px 0; max-width: 1150px; margin: 0 auto;}
@@ -192,10 +196,12 @@ section.card_qna {margin-bottom: 50px;}
   #main_header nav h1 {display: block;}
   #main_header nav ul li {display: block; padding: 8px 0;}
   /* main-top-slider */
+  .swiper-container {height: 70vh;}
   .swiper-container .swiper-wrapper .swiper-slide img {width: auto; height: 100%;}
-  .swiper-container .swiper-wrapper .swiper-slide .swiper_slide_txtBox { font-size: 40px;}
-  .swiper-container .swiper-wrapper .swiper-slide .swiper_slide_txtBox h2 {margin: 15px 0;}
-  .swiper-container .swiper-wrapper .swiper-slide .swiper_slide_txtBox p {line-height: 1.2;}
+  .swiper-container .swiper-wrapper .swiper-slide .swiper_slide_txtBox { font-size: 40px; top: 50%; left:50%; transform: translate(-50%,-50%); width: 83%;}
+  .swiper-container .swiper-wrapper .swiper-slide .swiper_slide_txtBox h2 {margin: 20px 0;}
+  .swiper-container .swiper-wrapper .swiper-slide .swiper_slide_txtBox p {line-height: 1.6; margin-bottom: 10px;}
+  .swiper-container .swiper-wrapper .swiper-slide .swiper_slide_txtBox p.eng_heading { line-height: 1.3;}
   /* section1 */
   .icon_row {text-align: center; padding: 0 15%;}
   /* banner */
@@ -208,13 +214,19 @@ section.card_qna {margin-bottom: 50px;}
   /* slider */
   .sldier_imgBox, .layer_imgBox {height: 35vh; width: 90%; margin-left: 5%;}
   /* footer */
+  footer#mainf_footer p{text-align: center;}
+  footer#mainf_footer p:before {display: none;}
   footer .grid_row {flex-direction: column;}
   footer .grid_row > div h2 {text-align: center !important;}
   footer .grid_row > div p { text-align: center;}
   footer .grid_row .skew_line:after { width: 80%; left: 5%; height: 70%;}
+  footer .skew_line:after {left:0; transform: translate(5%,60px);}
   /* about */
   main.about_us .our_team .grid_row .col-4 .promise_sentence { padding: 10px;}
   main.about_us .our_team .grid_row .col-4 .promise_sentence p { max-width: 85%;}
+  main.about_us .our_team .grid_row .col-4 {text-align: center;}
+  main.about_us .our_team .grid_row .col-4 .card {display: inline-block;}
+  main.about_us .our_team .grid_row .col-4 .card .card_overlay {left:0; }
   /* qna */
   .card_qna .grid_row .border_card {width: 85%; display: block; float: none; margin: 0 auto;}
   .card_qna .grid_row .col-3 {margin-bottom: 30px;}

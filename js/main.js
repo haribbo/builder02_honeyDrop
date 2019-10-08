@@ -17,7 +17,14 @@ $(document).ready(function() {
   var main_header_height = $('#main_header').innerHeight();
   var mobile_btn = $('#mobile_btn');
   var drop_menu = $('#main_header nav ul');
-  var isNavTurn = false;
+  var isNavTurn;
+
+  init();
+  function init() {
+    console.log("초기화");
+    isNavTurn = false;
+    turnColor(mobile_btn);
+  }
 
   $(window).scroll(function() {
     var top = this.scrollY;
@@ -40,10 +47,11 @@ $(document).ready(function() {
   });
 
   function turnColor(target) {
-    console.log("아이콘컬러턴");
     if(isNavTurn) {
+      console.log("아이콘 : 블랙색상");
       target.addClass('turn');
     } else {
+      console.log("아이콘 : 화이트색상");
       target.removeClass('turn');
     }
   }
