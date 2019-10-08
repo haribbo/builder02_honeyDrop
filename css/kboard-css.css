@@ -18,6 +18,10 @@ div.solid_cate_cover ul.solid_cate {/* background-color: var(--bg-right-gray);*/
 div.solid_cate_cover ul.solid_cate li {flex-grow: 1; text-align: center; border-bottom: 3px solid var(--ft-white); }
 div.solid_cate_cover ul.solid_cate li.active {background-color: var(--point2);}
 div.solid_cate_cover ul.solid_cate li a {display: inline-block; padding: 15px 20px; font-weight: bold;}
+@media (max-width:900px) {
+  div.solid_cate_cover ul.solid_cate {flex-wrap: wrap;}
+  div.solid_cate_cover ul.solid_cate li {width:50%;}
+}
 
 /* 공통 체크박스 */
  .kboard-attr-row.kboard-attr-radio .attr-value .attr-value-label,
@@ -50,6 +54,12 @@ border: 4px solid var(--grey-light1); background-color: var(--grey-light1); outl
  .global_pagination ul li.first-page a {vertical-align: baseline;}
  .global_control {text-align: right;}
 
+  @media (max-width:900px) {
+    .global_pagination ul {text-align: center;}
+    .global_pagination ul li {display: inline-block;}
+    .global_pagination ul li.first-page,.global_pagination li.last-page {display: inline-block;}
+  }
+
 /* 공통 edit 글쓰기 */
 
  /* ***************************************************************************************************************** */
@@ -57,13 +67,18 @@ border: 4px solid var(--grey-light1); background-color: var(--grey-light1); outl
 /* gallery list  */
 div.gallery_list_2 {}
 div.gallery_list_2 ul { overflow: hidden;}
-div.gallery_list_2 ul li { list-style: none; width: 48%; margin-bottom: 30px;}
-div.gallery_list_2 ul li:nth-child(odd) {float: left;}
-div.gallery_list_2 ul li:nth-child(even) {float: right;}
-div.gallery_list_2 ul li h3  {font-size: 20px; padding: 15px 0;}
+div.gallery_list_2 > ul > li { list-style: none; width: 48%; margin-bottom: 30px;}
+div.gallery_list_2 > ul > li:nth-child(odd) {float: left;}
+div.gallery_list_2 > ul > li:nth-child(even) {float: right;}
+div.gallery_list_2 > ul > li h3  {font-size: 20px; padding: 15px 0;}
+@media (max-width:900px) {
+  div.gallery_list_2 > ul > li { width: 80%; margin-left: 10%;}
+  div.gallery_list_2 > ul > li:nth-child(odd),div.gallery_list_2 > ul > li:nth-child(even) {float: none;}
+}
+
 /* gallery effect */
 main.gallery div.solid_cate_cover .line_down:after {bottom: 50%; transform: translateY(50%);}
-
+main.gallery>ul>li {display: block; width: 90%; margin: 0 auto;}
 
 /* QNA page */
 main.qna_content,div.qna_content {transition: .2s; }

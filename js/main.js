@@ -10,19 +10,74 @@ $(document).ready(function() {
 
   // main menu Scroll
   //메인 메뉴 스크롤
+
+
+  // main menu Script
   var main_header = $('#main_header');
   var main_header_height = $('#main_header').innerHeight();
+  var mobile_btn = $('#mobile_btn');
+  var drop_menu = $('#main_header nav ul');
+  var isNavTurn = false;
 
   $(window).scroll(function() {
     var top = this.scrollY;
     if (main_header_height < top && main_header.hasClass('active') == false) {
       main_header.addClass('active');
+      isNavTurn = true;
+      turnColor(mobile_btn);
+
     } else if (top < main_header_height && top === 0) {
       main_header.removeClass('active');
+      isNavTurn = false;
+      turnColor(mobile_btn);
     }
   });
 
+  mobile_btn.click(function(event) {
+    event.preventDefault();
+    mobile_iconTurn();
+    turnColor(mobile_btn);
+  });
 
+  function turnColor(target) {
+    console.log("아이콘컬러턴");
+    if(isNavTurn) {
+      target.addClass('turn');
+    } else {
+      target.removeClass('turn');
+    }
+  }
+
+  function mobile_iconTurn() {
+    if (drop_menu.hasClass('active')) {
+      console.log("엑스");
+      mobile_btn.attr('class', 'xi-align-right xi-2x');
+      drop_menu.removeClass('active');
+    } else {
+      console.log("메뉴");
+      mobile_btn.attr('class', 'xi-close xi-2x');
+      drop_menu.addClass('active');
+    }
+  }
+
+  function heightAnimate(target) {
+
+  }
+  // main menu Script end
+
+
+  var main_swiper = new Swiper('.swiper-container', {
+    speed: 600,
+    pagination: {
+      el: '.swiper-pagination',
+    },
+    autoplay: {
+      delay: 3000,
+    },
+    fadeEffect: {
+      crossFade: true
+    },
+  });
 
   var swiper = new Swiper('.swiper-container2', {
     speed: 600,
@@ -35,6 +90,9 @@ $(document).ready(function() {
       nextEl: '.swiper-button-next2',
       prevEl: '.swiper-button-prev2',
     },
+    autoplay: {
+      delay: 3000,
+    }
   });
 
   // acodian
@@ -62,20 +120,20 @@ $(document).ready(function() {
   const view_target2 = document.querySelectorAll('.view_ani');
   var start = true;
   var idx = 0;
-  var ani_info = ["animated","fadeInUp"];
+  var ani_info = ["animated", "fadeInUp"];
 
   $(window).scroll(function(event) {
     $('.bg_cover').toggleClass('active');
     if (start) {
       if ($(window).scrollTop() + ($(window).innerHeight() * 0.5) > view_target.eq(idx).offset().top) {
-          console.log('애니메이션 타켓:' + idx);
-          view_target2[idx].classList.add(ani_info[0],ani_info[1]);
-          idx++;
+        console.log('애니메이션 타켓:' + idx);
+        view_target2[idx].classList.add(ani_info[0], ani_info[1]);
+        idx++;
 
-          if(idx==view_target.length) {
-            start = false;
-            console.log("애니메이션이 끝났습니다");
-          }
+        if (idx == view_target.length) {
+          start = false;
+          console.log("애니메이션이 끝났습니다");
+        }
 
       };
       // view_target2[idx].classList.toggle(ani_info[0],ani_info[1]);
