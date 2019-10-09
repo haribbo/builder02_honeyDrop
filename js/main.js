@@ -23,24 +23,38 @@ $(document).ready(function() {
   var idx = 0;
   var ani_info = ["animated", "fadeInUp"];
 
-  document.querySelector('.up_btn').addEventListener("click",function(){
-    window.scrollTo(0,0);
-  });
+  // document.querySelector('.up_btn').addEventListener("click",function(){
+  //   window.scrollTo(0,0);
+  // });
 
   init();
 
-  function init() {
-    console.log("초기화");
-    isNavTurn = false;
-    turnColor(mobile_btn);
-  }
-
+  // scroll Event
   $(window).scroll(function() {
     var top = this.scrollY;
     quickBar_pos(top);
     menu_scroll_ani(top);
     // content_visible_ani();
   });
+
+  //  quick_bar click event
+  quick.find('.up_btn').click(function(event) {
+    window_up(event);
+  });
+
+  // mobile btn event
+  mobile_btn.click(function(event) {
+    event.preventDefault();
+    mobile_iconTurn();
+    turnColor(mobile_btn);
+  });
+
+  // function
+  function init() {
+    console.log("초기화");
+    isNavTurn = false;
+    turnColor(mobile_btn);
+  }
 
   function menu_scroll_ani(top) {
     if (main_header_height < top && main_header.hasClass('active') == false) {
@@ -78,11 +92,12 @@ $(document).ready(function() {
     }, 400);
   }
 
-  mobile_btn.click(function(event) {
-    event.preventDefault();
-    mobile_iconTurn();
-    turnColor(mobile_btn);
-  });
+  function window_up(taget) {
+      taget.preventDefault();
+      $('html,body').stop().animate({
+        scrollTop: 0
+      }, 500, 'swing');
+  }
 
   function turnColor(target) {
     if (isNavTurn) {

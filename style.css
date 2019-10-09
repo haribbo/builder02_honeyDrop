@@ -48,7 +48,7 @@ main.honey_process {padding: 100px 0;}
 
 /* qucik_bar */
 .qucik_wrap { /*height: 100vh;*/ margin: 50vh 0;  position: absolute; z-index: 333; right:0; }
-.qucik_wrap ul.qucik_list { overflow: hidden; margin-right: 20px; position: absolute; right: 0; top: 50vh; transform: translateY(-50%); background: #fafafa;; border-radius: 8px;}
+.qucik_wrap ul.qucik_list { overflow: hidden; margin-right: 20px; position: absolute; right: 0; transform: translateY(-50%); background: #fafafa;; border-radius: 8px;}
 .qucik_wrap ul.qucik_list:hover {box-shadow: var(--box_shadow); transition: .3s; background-color: #fff;}
 .qucik_wrap ul.qucik_list li:hover {background-color: var(--bg-right-gray); box-shadow:0 0 5px 0 rgba(0, 0, 0, 0.2) }
 .qucik_wrap ul.qucik_list li { padding: 10px; transition: .3s; text-align: center;}
@@ -70,7 +70,9 @@ main.honey_process {padding: 100px 0;}
 div.swiper-container-horizontal>.swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction {bottom: 50px; z}
 .swiper-slide-active .swiper_slide_txtBox {animation-delay: 1s; -webkit-animation-name: fadeIn; animation-name: fadeIn; animation-duration: 1s; animation-fill-mode: backwards;}
 /* slide images */
-.swiper-container .swiper-wrapper .swiper-slide {background: url('images/main-slide1.jpg')no-repeat center right/cover; object-fit: cover;}
+.swiper-container .swiper-wrapper .swiper-slide:first-child {background: url('images/main-slide1.jpg')no-repeat center right/cover; object-fit: cover;}
+.swiper-container .swiper-wrapper .swiper-slide:nth-child(2) {background: url('images/main-slide2.jpg')no-repeat center right/cover; object-fit: cover;}
+.swiper-container .swiper-wrapper .swiper-slide:last-child {background: url('images/main-slide3.jpg')no-repeat center center/cover; object-fit: cover;}
 
 .honey_bee {position: absolute; z-index: 999; right:-15px; top: -20px; display: inline-block; width: 32px; height: 32px; animation-iteration-count: infinite; animation-delay: 0.1s;}
 /* background: url('../images/bee.png') no-repeat center/cover; top:16px; */
@@ -101,6 +103,13 @@ div.swiper-container-horizontal>.swiper-pagination-bullets, .swiper-pagination-c
 .main_grow > div .col-7 .bg_cover:before { content: ''; position: absolute; left:-30px; top:-25px; width: 100%; height:100%; z-index: 2; background:url('images/dot-bg.png') no-repeat center/cover;  transition: .3s;}
 .main_grow > div .col-7 .bg_cover:after { content: ''; position: absolute; right:-30px; top: 25px; width: 100%; height:100%; border: 4px solid var(--point-rgb-color); z-index: -1; transform: skew(-2deg, 3deg); transition: .3s;}
 
+.main_product {background: var(--dark-black); padding: 50px 0;}
+.main_product .section_heading h2,.main_product .section_heading p {color:var(--bg-right-gray);}
+.main_product ul {}
+.main_product ul li img { display: inline-block;}
+.main_product ul li.card {}
+.main_product ul li.card .card_overlay {bottom: -20px; z-index: 10; padding: 20px; width: 93%; opacity: 1;background: var(--point-color);}
+.main_product ul li.card .card_overlay p {color:#000;}
 /* .main_grow > div .col-7:hover .bg_cover:after .border_card span.q{transform: skew(2deg, -3deg); z-index: -1;}
 .main_grow > div .col-7:hover .bg_cover {transform: skew(2deg, -3deg);z-index: 6;}
 .main_grow > div .col-7:hover .bg_cover {transform: skew(2deg, -3deg);z-index: 6;} */
@@ -145,10 +154,10 @@ footer .grid_row > div.footer_contact p:before,footer .grid_row > div.footer_abo
 /* slider2 section3*/
 #main_slider2{overflow: hidden; padding: 80px 0; max-width: 1150px; margin: 0 auto;}
 .swiper-container2 { width: 100%; height: 100%; position: relative;}
-.sldier_imgBox::before,.layer_imgBox:before {content: ''; position: absolute; left:-30px; top:-25px; width: 100%; height:100%; z-index: 2; background:url('images/dot-bg.png') repeat center;  transition: .3s; z-index:5; opacity: 0.6;}
-.sldier_imgBox,.layer_imgBox{background-color: var(--bg-right-gray);  width: 380px; line-height: 460px; background:  linear-gradient(rgba(0,0,0,.2), rgba(0,0,0,.2)),url('images/grow_right.jpg') no-repeat center/cover; position: relative; transition: .4s; z-index: 10;}
+.sldier_imgBox::before{content: ''; position: absolute; left:-30px; top:-25px; width: 100%; height:100%; z-index: 2; background:url('images/dot-bg.png') repeat center;  transition: .3s; z-index:5; opacity: 0.6;}
+.sldier_imgBox{background-color: var(--bg-right-gray);  max-width: 380px; line-height: 460px; background:  linear-gradient(rgba(0,0,0,.2), rgba(0,0,0,.2)),url('images/grow_right.jpg') no-repeat center/cover; position: relative; transition: .4s; z-index: 10;}
 .layer_imgBox {height: 460px; position: relative; z-index: 10;}
-.sldier_imgBox:after,.layer_imgBox:after {content: ''; position: absolute; left: -40px top: 25px; width: 100%; height:100%; border: 4px solid var(--point-rgb-color); z-index: -1; /*transform: skew(-2deg, -3deg);*/ transition: .3s;}
+.sldier_imgBox:after {content: ''; position: absolute; right: -15px; top: 10px; width: 100%; height:100%; border: 4px solid var(--point-rgb-color); z-index: -1; /*transform: skew(-2deg, -3deg);*/ transition: .3s;}
 .sldier_imgBox img {vertical-align: middle;}
 .swiper-slide .subtitle {font-size: 21px;}
 
@@ -176,13 +185,14 @@ main.about_us .about_story .section_heading {padding-bottom: 80px; border-bottom
 main.about_us .about_story .section_heading p { max-width: 700px; margin-bottom: 30px;}
 main.about_us .about_story .grid_row .col-6 {padding-bottom: 60px;}
 main.about_us .about_story .grid_row .col-6 .layer_imgBox{ height: 350px;}
+main.about_us .about_story .grid_row .layer_imgBox.about_sec1 {height: 300px; max-width: 70%; margin: 0 auto; background: url('images/about_sec1_bg.png') no-repeat center/cover;}
 main.about_us .about_abven {padding: 80px; background: var(--dark-black); text-align: center; box-shadow: inset 0px 7px 30px #111, inset 0px -7px 30px #111;}
 main.about_us .about_abven h3 {font-size: 60px;  color:var(--bg-right-gray);}
 main.about_us .about_abven h3 .tag {vertical-align: top; color:var(--point-color);}
 main.about_us .about_abven p { color:var(--bg-right-gray); max-width: 240px; margin: 0 auto;}
 main.about_us .our_team {padding: 80px 0 100px 0;}
 main.about_us .our_team .section_heading {margin-bottom: 40px;}
-main.about_us .our_team .layer_imgBox { background: linear-gradient(rgba(0,0,0,.2), rgba(0,0,0,.2)),url(images/honey_member.jpg) no-repeat center/cover; max-width: 800px; width: auto;}
+main.about_us .our_team .layer_imgBox { background: linear-gradient(rgba(0,0,0,.2), rgba(0,0,0,.2)),url(images/honey_member.jpg) no-repeat center/cover; max-width: 800px; margin: auto;}
 
 /* map & contact */
 main.contact_us {padding-top: 100px}
@@ -217,15 +227,21 @@ section.card_qna {margin-bottom: 50px;}
 
   /* product_process */
   /* 안되서 맨위에 올림 main.honey_process {padding: 100px 0;}  */
-  section.honey_steps .grid_row .col-8 {padding-left: 30px;}
   section.honey_steps .grid_row.step {margin-bottom: 60px; position: relative;}
   section.honey_steps .grid_row.step .col-4 {position: relative;}
   section.honey_steps .grid_row.step .col-4:after {content: ''; position: absolute;bottom: 0; height: 73px;  border-left: 3px dotted var(--ft-color); bottom:-73px; left:50%;}
+  section.honey_steps .grid_row .col-4 .layer_imgBox {height: 260px;}
+  section.honey_steps .grid_row .col-8 {padding-left: 30px;}
   section.honey_steps .grid_row.step:last-child .col-4:after {display: none;}
-  section.honey_steps .grid_row [class^="col"] .layer_imgBox {height: 260px;}
+  section.honey_steps .grid_row [class^="col"] .card:after {display: none;}
   section.honey_steps .grid_row [class^="col"] .card .card_overlay p { color:var(--dark-black); font-size: 18px; vertical-align: top; display: inline-block; font-size: 14px; margin-left: 8px;}
   section.honey_steps .grid_row [class^="col"] .card .card_overlay span {font-size: 25px;}
   section.honey_steps .grid_row:hover [class^="col"] .card .card_overlay {height: 230px; padding-top: 40px;}
+  /* card step bg */
+  section.honey_steps .grid_row:first-child .col-4 .layer_imgBox {background:url('images/step1.png');}
+  section.honey_steps .grid_row:nth-child(2) .col-4 .layer_imgBox {background:url('images/step2.png');}
+  section.honey_steps .grid_row:nth-child(3) .col-4 .layer_imgBox {background:url('images/step3.png');}
+  section.honey_steps .grid_row:nth-child(4) .col-4 .layer_imgBox {background:url('images/step1.png');}
 
 /************************************************************************** media **********************************************************************************************/
 @media (max-width:900px) {
@@ -266,12 +282,22 @@ section.card_qna {margin-bottom: 50px;}
   footer .grid_row .skew_line:after { width: 80%; left: 5%; height: 70%;}
   /* footer .skew_line:after {left:0; transform: translate(5%,60px);} */
   /* about */
+  main.about_us .about_story .grid_row {display: flex; flex-wrap: wrap; -moz-flex:flex; -webkit-flex:flex; -moz-flex-wrap: wrap; -webkit-flex-wrap: wrap;}
+  main.about_us .about_story .grid_row .col-6:nth-child(3) {order: 4;}
   /* qna */
   .card_qna .grid_row .border_card {width: 85%; display: block; float: none; margin: 0 auto;}
   .card_qna .grid_row .col-3 {margin-bottom: 30px;}
+  /* process */
+  section.honey_steps .grid_row .col-8 { padding: 5% 10%;}
+  section.honey_steps .grid_row.step .col-4:after { width: 100%; border-top: 3px dotted var(--ft-color); border-left: none; top: 50%; left: 0; opacity: 0.3;}
   /* contact */
   main.contact_us {}
   section.contact_form {flex-direction: column; flex-wrap: wrap; margin: 0 5%;}
   main.partner {padding: 100px 5%;}
+  /* main product List */
+  .main_product ul {text-align: center;}
+  .main_product ul li.card {display:inline-block; height: 300px; width: 50%; float: left;}
+  .main_product ul li.card .card_overlay { width: 94%; margin-left:3%; left: 50%; transform: translate(-50%); height: 100px; padding: 0; bottom: -50px;}
+  .main_product ul li.card .card_overlay p {font-size: 14px;}
 }
 /************************************************************************** media end **********************************************************************************************/

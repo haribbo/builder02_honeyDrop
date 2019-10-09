@@ -55,6 +55,31 @@ body::-webkit-scrollbar-track,div::-webkit-scrollbar-track {-webkit-box-shadow: 
 body::-webkit-scrollbar-thumb,div::-webkit-scrollbar-thumb { background-color: var(--point2); outline: 1px solid slategrey;}
 /* my_tag_acutomDefault */
 
+/* ********* layout *********** */
+:root { --lay-margin:15px; --lay-margin2:-15px; --lay-height: 260px; }
+/* 음수 마진 레이아웃 2칸짤 (컨테이너 필요)*/
+.wide_width {}
+div.layout_cover2 ,ul.layout_cover2 {overflow: hidden; margin: 0 var(--lay-margin2);}
+div.layout_cover2 li,ul.layout_cover2 li {width: 50%; float: left; padding: var(--lay-margin);}
+div.layout_cover2 li,ul.layout_cover2 li {}
+/* 음수 마진 레이아웃 3칸짤 (컨테이너 필요)*/
+.wide_width {}
+div.layout_cover3,ul.layout_cover3 {overflow: hidden; margin: 0 var(--lay-margin2);}
+div.layout_cover3 li,ul.layout_cover3 li {width: 33.33333%; float: left; padding: var(--lay-margin);}
+div.layout_cover3 li,ul.layout_cover3 li {}
+/* 음수 마진 레이아웃 4칸짤 (컨테이너 필요)*/
+.wide_width {}
+div.layout_cover4,ul.layout_cover4 {overflow: hidden; margin: 0 var(--lay-margin2);}
+div.layout_cover4 li,ul.layout_cover4 li {width: 25%; float: left; padding: var(--lay-margin);}
+div.layout_cover4 li,ul.layout_cover4 li {}
+@media (max-width:900px) {
+div.layout_cover2,div.layout_cover3,div.layout_cover4,ul.layout_cover2,ul.layout_cover3,ul.layout_cover4
+{margin: 0; padding: 0 5%;}
+div.layout_cover2 li,div.layout_cover3 li,div.layout_cover4 li
+ul.layout_cover2 li,ul.layout_cover3 li,ul.layout_cover4 li
+ {float: none; width: 100%; margin-bottom: 3%;}
+}
+/********** layour ************/
 
 .hidden {display: none;}
 /* main line effects */
@@ -148,7 +173,7 @@ label.attr-name {margin-bottom: 10px; display: inline-block; }
 
 /* card 3분할 overlay 있는거*/
 .card_cover { padding: 0 16px;}
-.card {max-width: 310px; width:auto; height: 400px; background-color: var(--bg-right-gray); position: relative; overflow: hidden;}
+.card { width:auto; height: 400px; position: relative; overflow: hidden;}
 .card .card_overlay { font-size: 18px; font-weight: bold; line-height: 1; padding: 8px 15px; background-color: var(--point-rgb-color); position: absolute; left:0 bottom:0; width: 100%; clip-path: polygon(0 0, 100% 0, 100% 29%, 0 46%); height: 100px; transition: 0.3s; height: 180px; }
 .card:hover .card_overlay {height: 230px; clip-path: polygon(0 0, 100% 0, 100% 33%, 0 61%); }
 
@@ -159,6 +184,16 @@ label.attr-name {margin-bottom: 10px; display: inline-block; }
 .border_card h3 {color: var(--ft-color); font-family: 'Nanum Gothic'; font-size: 18px; margin: 15px 0;}
 .border_card .icon_cover {position: absolute; bottom: 10px; right:10px;}
 .border_card .icon_cover i {color:var(--sub-green);}
+
+/* after,befor,bg 3layer_card */
+.layer_imgBox {height: 460px; position: relative; z-index: 10;}
+.layer_imgBox{background-color: var(--bg-right-gray);  max-width: 380px; line-height: 460px; background:  linear-gradient(rgba(0,0,0,.2), rgba(0,0,0,.2)),url('../images/grow_right.jpg') no-repeat center/cover; position: relative; transition: .4s; z-index: 10;}
+.layer_imgBox:after {content: ''; position: absolute; right: -15px; top: 10px; width: 100%; height:100%; border: 4px solid var(--point-rgb-color); z-index: -1; /*transform: skew(-2deg, -3deg);*/ transition: .3s;}
+.layer_imgBox:before {content: ''; position: absolute; left:-30px; top:-25px; width: 100%; height:100%; z-index: 2; background:url('../images/dot-bg.png') repeat center;  transition: .3s; z-index:5; opacity: 0.6;}
+.layer_imgBox.layer_list {background:none; background-color: #eee; height: 260px; width: 100%;}
+img.layer_imgBox.layer_list {width: 100%; display: inline-block;}
+.layer_imgBox.layer_list:after {display: none;}
+.layer_imgBox.layer_list:before {left:-30px; top:-25px;}
 
 /* sub_page_showcase */
 /*css 소스 예:

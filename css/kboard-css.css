@@ -86,8 +86,8 @@ main.qna_content,div.qna_content {transition: .2s; }
 .qna ul.acodian_list { max-width: 1000px; margin: 0 auto;}
 .qna ul.acodian_list li {position: relative;}
 .qna ul.acodian_list li > a {display: inline-block; width: 100%; height: 100%; border-bottom:  1px solid var(--border);}
-.qna ul.acodian_list li a span {font-size: 25px; font-weight: bold; color:var(--point-color); display: inline-block; margin: 0 20px;}
-.qna ul.acodian_list li a h3 {display: inline-block; font-size: 20px;}
+.qna ul.acodian_list li a span {font-size: 25px; font-weight: bold; color:var(--point-color); display: inline-block; margin: 0 20px; line-height: 55px;}
+.qna ul.acodian_list li a h3 {display: inline-block; font-size: 20px; vertical-align: baseline;}
 .qna ul.acodian_list li a i { font-size: 20px; float: right; display: block; position: absolute; right:0; top:20px; margin-right: 20px;}
 .qna ul.acodian_list li div.acodian_pannel {padding: 0 20px; background-color: #fafafa; overflow: hidden; height: 0; transition: .3s ease; }
 /* acodian_active */
@@ -114,9 +114,13 @@ main.notice_page { padding: 100px 0;}
 /* notice board + img (썸네일 추가) */
 .notice_board.img_board .img_board_img { width: 170px; height: 170px; position: relative; background-color: var(--bg-right-gray); overflow: hidden; display: inline-block;}
 .notice_board.img_board .img_board_img  img{ width: 100%; height: 100%;}
+.notice_board.img_board .notice_board_row span.notice_board_tit {width: 400px;}
 /* notice board + img (썸네일 추가) + magazin_board (제목 여러줄)*/
 .notice_board.img_board.magazin_board .img_board_img {width: 350px; height: 200px;}
 .notice_board.img_board.magazin_board  p.magazin_board_sub {font-family: 'Patua One' !important; color:var(--point-color) !important;}
 .notice_board.img_board.magazin_board  h3.magazin_board_tit {font-size: 18px; font-weight: bold; line-height: 1.5; font-family: 'NanumSquare'; margin: 8px 0; letter-spacing: 1px;}
 .notice_board.img_board.magazin_board .notice_board_row span:last-child { width: 110px;}
 .notice_board.img_board.magazin_board .notice_board_row > div { width: 350px;}
+
+@media (max-width:800px) {
+}
