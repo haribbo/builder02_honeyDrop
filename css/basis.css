@@ -115,6 +115,9 @@ ul.layout_cover2 li,ul.layout_cover3 li,ul.layout_cover4 li
 .absole_line_v:after {content:''; width: 2px; height: 100%; background-color: var(--point-color); position: absolute; top:0}
 .absole_line_v.left_v:after {left: -8px;}
 .absole_line_v.right_v:after {right:-8px;}
+.absole_line_h {position: relative;}
+.absole_line_h:after {content:''; width: 100%; height: 2px; background-color: var(--point-color); position: absolute; left:50%; transform: translate(-50%); z-index: 10;}
+.absole_line_h.bottom_h:after {bottom: -8px;}
 
 /* imag tag */
 .img_tag {position: absolute;  z-index: 1; white-space: nowrap; padding: 1rem; background:#fff; font-weight: 400; text-align: center;}
@@ -193,7 +196,7 @@ label.attr-name {margin-bottom: 10px; display: inline-block; }
 /* card 3분할 overlay 있는거*/
 .card_cover { padding: 0 16px;}
 .card { width:auto; height: auto; position: relative; overflow: hidden;}
-.card .card_overlay { font-size: 18px; font-weight: bold; line-height: 1; padding: 8px 15px; background-color: var(--point-rgb-color); position: absolute; left:0 bottom:0; width: 100%; clip-path: polygon(0 0, 100% 0, 100% 29%, 0 46%); height: 100px; transition: 0.3s; height: 180px; }
+.card .card_overlay { font-size: 18px; font-weight: bold; line-height: 1; padding: 8px 15px; background-color: var(--point-rgb-color); position: absolute; left:0 bottom:0; width: 100%; clip-path: polygon(0 0, 100% 0, 100% 29%, 0 46%); height: 150px; transition: 0.3s; }
 .card:hover .card_overlay {height: 230px; clip-path: polygon(0 0, 100% 0, 100% 33%, 0 61%); }
 
 /* border-line card & shodow*/

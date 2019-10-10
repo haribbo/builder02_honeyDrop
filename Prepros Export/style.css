@@ -17,12 +17,12 @@
 #main_header nav { max-width: 1000px; margin: 0 auto; display: flex; flex:-moz-flex; flex:-webkit-flex; justify-content: space-between; align-items: center;}
 #main_header nav h1 {display: inline-block; line-height: 1; color:var(--point-color); position: relative; animation-duration: .4s; animation-delay: 0.4s;}
 #main_header nav h1 a { color:inherit; font-family: 'Patua One'; font-size: 20px; letter-spacing: 0.8px;}
-#main_header nav ul { padding: 30px 0; transition: .3s;}
-#main_header nav ul li {display: inline-block;}
-#main_header nav ul li a { color:var(--ft-white); font-weight: bold; letter-spacing: 1px; text-transform: uppercase; display: inline-block; padding: 0 10px; font-family: 'Patua One'; position: relative;}
-#main_header nav ul li a:hover,#main_header nav ul li a.active, #main_header.active nav ul li a:hover,#main_header.active nav ul li a.active {color:var(--point-color);}
+#main_header nav > ul { padding: 30px 0; transition: .3s;}
+#main_header nav > ul li {display: inline-block;}
+#main_header nav > ul li a { color:var(--ft-white); font-weight: bold; letter-spacing: 1px; text-transform: uppercase; display: inline-block; padding: 0 10px; font-family: 'Patua One'; position: relative;}
+#main_header nav > ul li a:hover,#main_header nav > ul li a.active, #main_header.active nav > ul li a:hover,#main_header.active nav > ul li a.active {color:var(--point-color);}
 #main_header.active {background-color: #fafafa; position: fixed; top:0; left:0; box-shadow:var(--box_shadow);}
-#main_header.active ul {padding: 20px 0;}
+#main_header.active > ul {padding: 20px 0;}
 #main_header.active a {color: var(--ft-color);}
 #main_header.active .honey_bee  {right:-15px; top: -10px; transition: 0.5s;}
 #mobile_btn {display: none; position: absolute; right:5%; top:20px; color:var(--bg-right-gray); opacity: 0.7;}
@@ -190,11 +190,11 @@ section.card_qna {margin-bottom: 50px;}
   .section_heading {padding: 5%;}
   .skew_line:after {}
   #main_header {background-color: #222;}
-  #main_header nav ul {display: none;}
-  #main_header nav ul.active {display: block; transition: .3s;}
+  #main_header nav > ul {display: none;}
+  #main_header nav > ul.active {display: block; transition: .3s;}
   #main_header nav {display: flex; flex-direction: column; padding:20px 0;}
   #main_header nav h1 {display: block;}
-  #main_header nav ul li {display: block; padding: 8px 0;}
+  #main_header nav > ul li {display: block; padding: 8px 0;}
   /* main-top-slider */
   .swiper-container {height: 70vh;}
   .swiper-container .swiper-wrapper .swiper-slide img {width: auto; height: 100%;}

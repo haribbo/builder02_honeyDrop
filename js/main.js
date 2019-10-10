@@ -14,7 +14,7 @@ $(document).ready(function() {
   var main_header = $('#main_header');
   var main_header_height = $('#main_header').innerHeight();
   var mobile_btn = $('#mobile_btn');
-  var drop_menu = $('#main_header nav ul');
+  var drop_menu = $('#main_header nav > ul');
   var isNavTurn;
   // main animation
   var view_target = $('.view_ani');
@@ -28,6 +28,13 @@ $(document).ready(function() {
   // });
 
   init();
+
+  // function
+  function init() {
+    console.log("초기화");
+    isNavTurn = false;
+    turnColor(mobile_btn);
+  }
 
   // scroll Event
   $(window).scroll(function() {
@@ -49,12 +56,11 @@ $(document).ready(function() {
     turnColor(mobile_btn);
   });
 
-  // function
-  function init() {
-    console.log("초기화");
-    isNavTurn = false;
-    turnColor(mobile_btn);
-  }
+  var drop_menu_li = $('#main_header nav > ul > li > a');
+  drop_menu_li.click(function(idx) {
+    var index = drop_menu_li.index(this);
+    event.preventDefault();
+  });
 
   function menu_scroll_ani(top) {
     if (main_header_height < top && main_header.hasClass('active') == false) {
@@ -69,22 +75,6 @@ $(document).ready(function() {
     }
   }
 
-  function content_visible_ani() {
-    $('.bg_cover').toggleClass('active');
-    if (start) {
-      if ($(window).scrollTop() + ($(window).innerHeight() * 0.5) > view_target.eq(idx).offset().top) {
-        console.log('애니메이션 타켓:' + idx);
-        view_target2[idx].classList.add(ani_info[0], ani_info[1]);
-        idx++;
-        // view_target2[idx-1].classList.remove(ani_info[0],ani_info[1]);
-        if (idx == view_target.length) {
-          start = false;
-          console.log("애니메이션이 끝났습니다");
-        }
-      };
-    }
-  }
-
   function quickBar_pos(scrollY) {
     // cosole.log("scrolly 값"+scrollY);
     quick.stop().animate({
@@ -93,10 +83,10 @@ $(document).ready(function() {
   }
 
   function window_up(taget) {
-      taget.preventDefault();
-      $('html,body').stop().animate({
-        scrollTop: 0
-      }, 500, 'swing');
+    taget.preventDefault();
+    $('html,body').stop().animate({
+      scrollTop: 0
+    }, 500, 'swing');
   }
 
   function turnColor(target) {
