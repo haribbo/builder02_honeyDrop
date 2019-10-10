@@ -15,6 +15,7 @@
   <script src="js/main.js" charset="utf-8"></script>
   <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
 
+  <link rel="stylesheet" href="css/product_detail.css">
   <title>Document</title>
 </head>
 
@@ -35,6 +36,7 @@
             <li><a href="about_us.html">aboutUs</a></li>
             <li><a href="honey_process.html" class="">Process</a></li>
             <li><a href="partner.html">partner</a></li>
+            <li><i id="dropdown_btn" class="xi-close xi-2x xi-2x"></i></li>
           </ul>
         </li>
         <li><a href="gallery.html">product</a>
@@ -42,6 +44,7 @@
             <li><a href="gallery.html">product</a></li>
             <li><a href="photo_list.html">gallery</a></li>
             <li><a href="review.html">review</a></li>
+            <li><i id="dropdown_btn" class="xi-close xi-2x xi-2x"></i></li>
           </ul>
         </li>
         <li><a href="gallery.html">comunity</a>
@@ -49,23 +52,20 @@
             <li><a href="magazine.html">magazine</a></li>
             <li><a href="qna.html">help</a></li>
             <li><a href="notice.html">notice</a></li>
+            <li><i id="dropdown_btn" class="xi-close xi-2x xi-2x"></i></li>
           </ul>
         </li>
-        <li><a href="contact.html" class="contact_btn absole_line_h bottom_h">contact</a>
-          <ul class="dropdown">
-            <li><a href="contact.html" class="">contact</a></li>
-          </ul>
-        </li>
+        <li><a href="contact.html">contact</a></li>
       </ul>
     </nav>
   </header>
-  <!-- header end -->
+  <!-- header end-->
 
   <!-- showcase  -->
   <div class="sub_page_showcase root_cover">
     <div class="inner">
-      <p class="">magazin</p>
-      <h2>매거진</h2>
+      <p class="">About us</p>
+      <h2>허니드롭, 그 시작</h2>
     </div>
     <!-- root -->
     <div class="root">
@@ -77,99 +77,98 @@
   </div>
   <!-- showcase end -->
 
-  <main class="notice_page">
+  <!-- product detail -->
+  <main class="product_detail">
     <div class="section_heading">
-      <h3 class="point eng_heading">notice</h3>
-      <h2>매거진</h2>
-      <p>벌과 꿀에대한 정보를 알아보세요</p>
-    </div>
-    <section class="notice_board img_board magazin_board">
-      <ul>
-        <div class="notice_board_heading notice_board_row">
-          <span class="">번호</span>
-          <span class="">사진</span>
-          <span class="">제목</span>
-          <span class="">날짜</span>
-        </div>
-        <li class="notice_board_row">
-          <span class="notice_board_num">1</span>
-          <div class="img_board_img">
-            <img src="images/magazin_thumbnails/magazin_img1.jpg" alt="">
-          </div>
-          <div class="notice_board_tit">
-            <a href="">
-              <p class="magazin_board_sub">Honey bee Story</p>
-              <h3 class="magazin_board_tit">꿀의 종류와 효능</h3>
-            </a>
-          </div>
-          <span class="notice_board_date">2019 .10 .07</span>
-        </li>
-        <li class="notice_board_row">
-          <span class="notice_board_num">1</span>
-          <div class="img_board_img">
-            <img src="images/magazin_thumbnail.png" alt="">
-          </div>
-          <div class="notice_board_tit">
-            <a href="">
-              <p class="magazin_board_sub">Honey bee Story</p>
-              <h3 class="magazin_board_tit">벌꿀의 가격</h3>
-            </a>
-          </div>
-          <span class="notice_board_date">2019 .10 .07</span>
-        </li>
-        <li class="notice_board_row">
-          <span class="notice_board_num">1</span>
-          <div class="img_board_img">
-            <img src="images/magazin_thumbnails/magazin_img2.jpg" alt="">
-          </div>
-          <div class="notice_board_tit">
-            <a href="">
-              <p class="magazin_board_sub">Honey bee Story</p>
-              <h3 class="magazin_board_tit">꿀벌의 종류</h3>
-            </a>
-          </div>
-          <span class="notice_board_date">2019 .10 .07</span>
-        </li>
-        <li class="notice_board_row">
-          <span class="notice_board_num">1</span>
-          <div class="img_board_img">
-            <img src="images/magazin_thumbnails/magazin_img3.jpg" alt="">
-          </div>
-          <div class="notice_board_tit">
-            <a href="">
-              <p class="magazin_board_sub">Honey bee Story</p>
-              <h3 class="magazin_board_tit">좋은 꿀의 기준 및 안정 인증에 대해</h3>
-            </a>
-          </div>
-          <span class="notice_board_date">2019 .10 .07</span>
-          <li class="notice_board_row">
-            <span class="notice_board_num">1</span>
-            <div class="img_board_img">
-              <img src="images/magazin_thumbnails/magazin_img4.jpg" alt="">
-            </div>
-            <div class="notice_board_tit">
-              <a href="">
-                <p class="magazin_board_sub">Honey bee Story</p>
-                <h3 class="magazin_board_tit">꿀벌이 살기에 좋은 곳</h3>
-              </a>
-            </div>
-            <span class="notice_board_date">2019 .10 .07</span>
-          </li>
-      </ul>
+        <h3 class="point eng_heading">product</h3>
+        <h2>상품 목록</h2>
+        <p>허니드롭의 상품을 알아보세요</p>
+      </div>
 
-      <div class="global_pagination">
-        <ul>
-          <li class="first-page"><a href="">처음</a></li>
-          <li class="active"><a href="">1</a></li>
-          <li><a href=""></a>2</li>
-          <li><a href=""></a>3</li>
-          <li><a href=""></a>4</li>
-          <li class="last-page"><a href="">마지막</a></li>
-        </ul>
+    <section class="product_detail_imgs wide_width">
+      <div class="grid_row">
+        <div class="col-7">
+          <div class="img_top">
+            <div class="placeholder">
+              <p class="placeholder_txt">
+                thumbnail
+              </p>
+            </div>
+          </div>
+          <ul class="img_bottom layout_cover3">
+            <li class="">
+              <div class="placeholder">
+                <p class="placeholder_txt">IMG</p>
+              </div>
+            </li>
+            <li class="">
+              <div class="placeholder">
+                <p class="placeholder_txt">IMG</p>
+              </div>
+            </li>
+            <li class="">
+              <div class="placeholder">
+                <p class="placeholder_txt">IMG</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="col-5">
+          <div class="small_heading">
+            <h3>ACACIA HONEY</h3>
+            <h2>아카시아 꿀</h2>
+          </div>
+          <ul class="info_list">
+            <li>
+              <span class="info_list_tit">용량 </span>
+              <p>100ml</p>
+            </li>
+            <li>
+              <span class="info_list_tit">용량</span>
+              <p>100ml</p>
+            </li>
+            <li>
+              <span class="info_list_tit">가격 </span>
+              <p>2000 원</p>
+            </li>
+            <li class="btn_box ft_right">
+              <a href="" class="border_btn small"><i></i>contact</a>
+              <a href="" class="point_btn small"><i></i>cart</a>
+            </li>
+          </ul>
+        </div>
       </div>
     </section>
-  </main>
+    <section class="product_detail_conts wide_width">
+      <article class="a1">
+        <h3 class="absole_line_v left_v">상품설명</h3>
+        <p> 이의서를 붙여 국회로 환부하고, 그 재의를 요구할 수 있다. 국회의 폐회중에도 또한 같다. 국정감사 및 조사에 관한 절차그 재의를 요구할 수 있다. 국회의 폐회중에도 또한 같다. 국정감사 및 조사에 관한 절차 그 재의를 요구할 수 있다. 국회의 폐회중에도 또한 같다. 국정감사 및 조사에 관한 절차  기타 필요</p>
+      </article>
+      <article class="a2">
+      </article>
+      <article>
+        <h3 class="absole_line_v left_v">상품 유의사항</h3>
+        <ul>
+          <li> 방법으로 근로자의 고용의 증진과 적정임금의 보장에 노력하여야</li>
+          <li>중에도 또한 같다. 국정감사 및 조사에 관한 절차 기타 필요</li>
+          <li> 방법으로 근로자의 고용의 증진과 적정임금의</li>
+        </ul>
+      </article>
+      <article class="product_detail_banner">
+        <h3><a href="">새소식 / 공지사항을 알아보세요 <i class="xi-arrow-right xi-1x"></i> </a></h3>
+      </article>
+    </section>
+    <div class="user_btn">
+      <a href="" class="point_btn small"><i></i>목록보기</a>
+    </div>
+    <div class="admin_btn_box2 grid_row">
+      <div class="col-12 ft_right">
+        <a href="" class="border_btn small"><i></i>글수정</a>
+        <a href="" class="point_btn small"><i></i>글쓰기</a>
+      </div>
+    </div>
 
+  </main>
   <!-- footer   -->
   <footer id="mainf_footer">
     <div class="grid_row margin_width">
