@@ -38,28 +38,18 @@ inset 20px 20px 70px #000, inset -20px -20px 70px #000
     <p>빠르게 안내드리도록 하겠습니다</p>
   </div> */
 
-
-/* my_tag_acutomDefault */
 body {letter-spacing: 1px;}
 body, span,span a,a { font-family: 'Nanum Gothic', sans-serif; line-height: 1.5; font-size: 16px; color:var(--ft-color); text-decoration: none;}
 h1,h2,h3,h4,h5,h6 { font-family: 'NanumSquare', sans-serif !important; font-weight: bold; color:var(--dark-black); line-height: 1.4;}
-button {background: none; cursor: pointer;}
 p {line-height: 1.8; color:var(--ft-sub);}
 strong{font-weight: 600;}
-input:focus { border-bottom: 3px solid var(--point-rgb-color) !important;}
-input[type="text"] { border:none; outline: none; border-bottom: 3px solid var(--gray); background-color: transparent; width: 180px;}
-checkbox {margin: 10px;}
-checkbox span {margin-left: 10px;}
-textarea:focus {border-color: var(--point-rgb-color);}
 body::-webkit-scrollbar,div::-webkit-scrollbar {width: 1em;}
 body::-webkit-scrollbar-track,div::-webkit-scrollbar-track {-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.1);}
 body::-webkit-scrollbar-thumb,div::-webkit-scrollbar-thumb { background-color: var(--point2); outline: 1px solid slategrey;}
-/* my_tag_acutomDefault */
 
 /* ********* layout *********** */
 :root { --lay-margin:15px; --lay-margin2:-15px; --lay-height: 260px; }
 /* 음수 마진 레이아웃 2칸짤 (컨테이너 필요)*/
-.wide_width {}
 div.layout_cover2 ,ul.layout_cover2 {overflow: hidden; margin: 0 var(--lay-margin2);}
 div.layout_cover2 > div,ul.layout_cover2 li {width: 50%; float: left; padding: var(--lay-margin);}
 div.layout_cover2 > div,ul.layout_cover2 li {}
@@ -95,7 +85,6 @@ ul.layout_cover2 li,ul.layout_cover3 li,ul.layout_cover4 li
 
 .point  { color:var(--point-color); font-weight: bold;}
 .point_green {color:var(--sub-green) !important; font-size: inherit;}
-
 .nanum_sq { font-family: 'NanumSquare', sans-serif; }
 .nanum_gd {font-family: 'Nanum Gothic', sans-serif;}
 .ft_right {text-align: right!important}
@@ -109,10 +98,13 @@ ul.layout_cover2 li,ul.layout_cover3 li,ul.layout_cover4 li
 .placeholder {display: table; height: 100%; width: 100%; background-color: #f4f4f4;}
 .placeholder .placeholder_txt {display: table-cell; vertical-align: middle; text-align: center; font-weight: bold; color: #999; text-transform: uppercase; font-family: 'Patua One';}
 .partner_line,hr { border:  1px solid #eee;margin-bottom: 30px;}
+.arrow_move {animation-play-state: paused; animation-duration: 2s; animation-name: shake; animation-iteration-count: infinite; color:var(--bg-right-gray);}
+.arrow_container:hover .arrow_move {animation-play-state: running;}
+.arrow_move {margin-left: 15px; display: inline-block;}
 
 /* absole line */
 .absole_line_v {position: relative;}
-.absole_line_v:after {content:''; width: 2px; height: 100%; background-color: var(--point-color); position: absolute; top:0}
+.absole_line_v:after {content:''; width: 2px; height: 100%; background-color: var(--point-color); position: absolute; top:0;}
 .absole_line_v.left_v:after {left: -8px;}
 .absole_line_v.right_v:after {right:-8px;}
 .absole_line_h {position: relative;}
@@ -154,7 +146,6 @@ ul.layout_cover2 li,ul.layout_cover3 li,ul.layout_cover4 li
 .promise_sentence p:before {content: "`"; right:0px;}
 
 /* btns */
-button {border:none;}
 .point_btn { display: inline-block; padding: 15px 50px; background-color: var(--sub-green); color: var(--ft-white)!important; border-radius: 40px; transition: 0.3s; }
 .point_btn.small {  padding: 10px 35px; }
 .point_btn:hover {background-color: var(--point-color);}
@@ -162,32 +153,6 @@ button {border:none;}
 .border_btn {display: inline-block; padding: 10px 35px; border-radius: 40px; border: 3px solid var(--sub-green); color:var(--sub-green); font-weight: bold; transition: .3s; text-transform: uppercase; font-size: 14px; margin-top: 10px;}
 .border_btn:hover {background-color: var(--sub-green); color: var(--ft-white);}
 
-/* globar_input */
-.kboard-attr-row,.input_row {box-sizing: border-box; padding-bottom: 25px; overflow: hidden;}
-.kboard-attr-row label.attr_name,.input_row label,label { }
-.kboard-attr-row div.attr-value,.input_row,.input_cover {} /*input cover*/
-
-.kboard-attr-row div.attr-value input[type="text"],
-.input_row input[type="text"],.input_cover input[type="text"] { width: 100%; margin-right: -25px; border-bottom: 2px solid var(--border); display: inline-block;}
-.input_row input[type="text"],.input_cover input[type="text"]:focus {border: 2px solid var(--point-rgb-color);}
-input[type="submit"],.send {}
-.checkbox_row,.ridio_box_row {}
-textarea {width: 100%;   width: 100%; height: 150px; padding: 12px 20px; box-sizing: border-box; border: 1px solid var(--border); border-radius: 4px;
-background-color: var(--bg-right-gray); resize: none; outline: none;}
-input_row {}
-.privacy_txt { height: 100px; text-overflow: ellipsis; overflow: auto; border: 1px solid var(--border); padding: 15px;}
-.privacy_row { margin-bottom: 25px;}
-.kboard-attr-row,.input_row label.checkbox_label {display: block;}
-checkbox {display: inline-block;}
-checkbox span {margin-right:8px;}
-button[type="submit"] {background-color: var(--point2); padding: 15px 50px; color: var(--ft-white)!important; border-radius: 100px; transition: 0.3s;  font-weight: bold; font-size: 14px; letter-spacing: 2px;}
-button[type="submit"]:hover {background-color: var(--point-color);}
-
-span.attr-required-text { color:var(--point2);}
-span.field-name {color:var(--ft-color);  margin-bottom: 8px; display: inline-block;}
-label.attr-name {margin-bottom: 10px; display: inline-block; }
-.btn_box {text-align: center;}
-.admin_btn_box {text-align: right;}
 /* overlay img */
 .img_cover {width:100%; height: 350px; background-color: var(--bg-right-gray); position: relative; transition: 0.3s;}
 .img_cover:after { background-color: rgba(0,0,0,.0);}
@@ -218,8 +183,7 @@ img.layer_imgBox.layer_list {width: 100%; display: inline-block;}
 .layer_imgBox.layer_list:before {left:-30px; top:-25px;}
 
 /* sub_page_showcase */
-/*css 소스 예:
-.sub_page_showcase.aubout_showcase :background: linear-gradient(rgba(0,0,0,.8), rgba(0,0,0,.8)), url('images/aboutus/aboutus_showcase.jpg') no-repeat center/cover; */
+/*.sub_page_showcase.aubout_showcase :background: linear-gradient(rgba(0,0,0,.8), rgba(0,0,0,.8)), url('images/aboutus/aboutus_showcase.jpg') no-repeat center/cover; */
 .sub_page_showcase {width: 100%; height: 350px; overflow: hidden;  text-transform: uppercase; text-align: center; display: table;}
 .sub_page_showcase .inner {display: table-cell; vertical-align: middle; color:var(--bg-right-gray);}
 .sub_page_showcase h2 {margin: 8px; font-size: 24px;}
@@ -227,7 +191,7 @@ img.layer_imgBox.layer_list {width: 100%; display: inline-block;}
 .sub_page_showcase p {font-family: 'Patua One' !important; color:var(--point-color) !important;  font-size: 18px;}
 .sub_page_showcase h2,.sub_page_showcase h2 p {color:inherit !important;}
 
-/* root site 걍로 */
+/* sbu_page_showcase >  root site 걍로 */
 .root_cover {position: relative;}
 .root {height: 50px; width: 100%; background-color: rgba(0,0,0,.8); position: absolute; bottom:0; left:0; }
 .root ul {margin: 0 auto; max-width: var(--max-width); border-left: 1px solid var(--opacity-white-line); border-right: 1px solid var(--opacity-white-line); overflow: hidden;}

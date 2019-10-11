@@ -8,24 +8,11 @@
 @import url("css/animation.css");
 @import url("css/kboard-css.css");
 
-main.honey_process {padding: 100px 0;}
 /* 삭제 필요한거 */
 .quick_bar_section {height: 1600px;}
 .padding {height: 100px;}
-/* 애니메이션 */
 /* .view_ani {opacity: 0;} */
-.flex-align {display: flex; flex:-moz-flex; flex:-webkit-flex; }
-.animated {
-  -webkit-animation-duration: 1s;
-  animation-duration: 1s;
-  -webkit-animation-fill-mode: both;
-  animation-fill-mode: both;
-}
-.arrow_move {animation-play-state: paused; animation-duration: 2s; animation-name: shake; animation-iteration-count: infinite; color:var(--bg-right-gray);}
-.arrow_container:hover .arrow_move {animation-play-state: running;}
-.arrow_move {margin-left: 15px; display: inline-block;}
-
-/* 본문 애니메이션 end*/
+main.honey_process {padding: 100px 0;}
 #main_header {background-color: transparent; position: absolute; z-index: 999; width: 100%; transition: .3s;}
 #main_header nav { max-width: 1000px; margin: 0 auto; display: flex; flex:-moz-flex; flex:-webkit-flex; justify-content: space-between; align-items: center;}
 #main_header nav h1 {display: inline-block; line-height: 1; color:var(--point-color); position: relative; animation-duration: .4s; animation-delay: 0.4s;}
@@ -295,10 +282,8 @@ section.card_qna {margin-bottom: 50px;}
   section.product_detail_conts article.product_detail_banner i {display: inline-block; padding: 4px; border-radius: 50%;  border: 2px solid var(--sub-green);}
 
 /************************************************************************** media **********************************************************************************************/
-@media (max-width:900px) {
-
+@media (max-width:768px) {
   .qucik_wrap {display: none;}
-
   #mobile_btn {display: block;}
   .grid_row [class^="col"] { margin: 0; padding: 5%; width: 100%;}
   .section_heading {padding: 5%;}

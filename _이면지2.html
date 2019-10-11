@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+
+  <style>
+    /* 공통 input globar_input */
+    .kboard-attr-row,.input_row {box-sizing: border-box; padding-bottom: 25px; overflow: hidden;}
+    .kboard-attr-row label.attr_name,.input_row label,label { }
+    .kboard-attr-row div.attr-value,.input_row,.input_cover {} /*input cover*/
+
+    .kboard-attr-row div.attr-value input[type="text"],
+    .input_row input[type="text"],.input_cover input[type="text"] { width: 100%; margin-right: -25px; border-bottom: 2px solid var(--border); display: inline-block;}
+    .input_row input[type="text"],.input_cover input[type="text"]:focus {border: 2px solid var(--point-rgb-color);}
+    input[type="submit"],.send {}
+    .checkbox_row,.ridio_box_row {}
+    textarea {width: 100%;   width: 100%; height: 150px; padding: 12px 20px; box-sizing: border-box; border: 1px solid var(--border); border-radius: 4px;
+    background-color: var(--bg-right-gray); resize: none; outline: none;}
+    input_row {}
+    .privacy_txt { height: 100px; text-overflow: ellipsis; overflow: auto; border: 1px solid var(--border); padding: 15px;}
+    .privacy_row { margin-bottom: 25px;}
+    .kboard-attr-row,.input_row label.checkbox_label {display: block;}
+    checkbox {display: inline-block;}
+    checkbox span {margin-right:8px;}
+    button[type="submit"] {background-color: var(--point2); padding: 15px 50px; color: var(--ft-white)!important; border-radius: 100px; transition: 0.3s;  font-weight: bold; font-size: 14px; letter-spacing: 2px;}
+    button[type="submit"]:hover {background-color: var(--point-color);}
+
+    span.attr-required-text { color:var(--point2);}
+    span.field-name {color:var(--ft-color);  margin-bottom: 8px; display: inline-block;}
+    label.attr-name {margin-bottom: 10px; display: inline-block; }
+    .btn_box {text-align: center;}
+    .admin_btn_box {text-align: right;}
+
+    .kboard-attr-row.kboard-attr-radio .attr-value .attr-value-label,
+    .kboard-attr-row.kboard-attr-checkbox .attr-value .attr-value-label
+   { -webkit-user-select: none; -moz-user-select: none;-ms-user-select: none; user-select: none; position: relative;}
+    .kboard-attr-row.kboard-attr-radio .attr-value .attr-value-label input,
+    .kboard-attr-row.kboard-attr-checkbox .attr-value .attr-value-label input
+   {height: 0; width: 0; margin-left: 30px; transition: .2s;}
+    .kboard-attr-row.kboard-attr-radio .attr-value .attr-value-label input:before,
+    .kboard-attr-row.kboard-attr-checkbox .attr-value .attr-value-label input:before
+   {content: ''; width: 20px; height: 20px; left:3px; top:0; margin-top:6px; position: absolute; display: inline-block;
+   border: 4px solid var(--border); background-color: var(--border); outline: 2px solid var(--grey-light3);}
+    .kboard-attr-row.kboard-attr-radio .attr-value .attr-value-label input:after {}
+    .kboard-attr-row.kboard-attr-radio .attr-value .attr-value-label input:checked:before,
+    .kboard-attr-row.kboard-attr-checkbox .attr-value .attr-value-label input:checked:before
+   {background-color: var(--point-color); outline: 2px solid var(--point-color);}
+    .kboard-attr-row.kboard-attr-checkbox .attr-value .attr-value-label input:before {margin-top:0;}
+  </style>
+
+</body>
+</html>
