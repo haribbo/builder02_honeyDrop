@@ -1,16 +1,59 @@
 
+/* ------------------------------- input --------------------------- */
+/* 필수로 필요한 css , 선택은 선택사항 */
+
+/* input custom 필수 (다른곳에 있다면 바꾸거나 지우기)*/
+:root { /* --point-color:#ffdd57; --max-width:1000px; */--container-paddiing : 0 5%;}
+
+.input_fields,section.input_fields { max-width: var(--max-width); margin: 0 auto;}
+.input_border {border-bottom: 1px solid #ccc;}
+.input_wide {width: 100%;}
+.input_row{margin: var(--container-paddiing); padding-bottom: 30px; max-width: 100%; margin-bottom: 30px; line-height:1!important;}
+.input_row.radio_row {margin: 0; padding: 0; padding: 0 5% 25px 5%; display:table; }
+
+/* input custom reset 필수*/
 button {border:none; background: none; cursor: pointer;}
-.input_fields { max-width: 1100px; margin: 0 auto;}
+input,textarea {border:none; border-bottom:2px solid #ccc; height: 40px; background-color:#fafafa; padding: 10px; outline: none; display:inline-block; width:100%;}
+textarea {resize: none; min-height: 150px;}
+input:focus { border-bottom: 3px solid var(--point-rgb-color);}
+textarea:focus{border-color: var(--point-rgb-color);}
+input[type="radio"] {-webkit-appearance: none;  -moz-appearance: none; appearance: none;}
 
-/* 공통 input */
-input {border:none; border-bottom:2px solid #ccc; height: 40px; background-color:#fafafa; padding: 10px; outline: none; display:inline-block; width:100%;}
-input:focus { border-bottom: 3px solid var(--point-rgb-color) !important;}
-textarea:focus {border-color: var(--point-rgb-color);}
+/* input label align 필수*/
+.label_inner,label > span {margin-bottom: 10px; margin-left: 8px; display:block; width: 100%; position: relative; font-size: 18px; font-weight: bold; line-height: 1 !important;}
+.label_inner_inline { display: inline; margin-bottom: 10px; margin-left: 8px; position: relative; font-size: 18px; font-weight: bold; margin-right: 8px;}
+/* input label deco  선택 */
+.label_inner:after,.label_inner_inline:after {content:''; width: 3px; height: 100%; background: var(--point-color); position: absolute; top:0; left: -8px; z-index: 3;}
 
-.input_row  {padding: 0 5%; margin-bottom: 35px;}
-.input_row label .label_inner {margin-bottom: 10px; margin-left: 8px; display:block; width: 100%; position: relative; font-size: 18px;}
-.input_row label .label_inner:after {content:''; width: 3px; height: 100%; background-color: var(--point-color); position: absolute; top:0; left: -8px; z-index: 3;}
+/* input layout 선택*/
+.input_row[class*="devide_"] {border-bottom: 1px solid #ccc;}
+.input_row[class*="devide_"]:after,.input_row:after {content: ''; display: block; overflow: hidden; float: none; clear: both; display: table;}
+.input_row[class*="devide_"] > div, .input_row[class*="devide_"] > span, .input_row[class*="devide_"] > label {float: left;}
+.input_row.devide_2 > div,.input_row.devide_2 > span,.input_row.devide_2 > label { width: 50%;}
+.input_row.devide_3 > div,.input_row.devide_3 > span,.input_row.devide_3 > label { width: 33.333%;}
+
+/* input label,font,input custom (셀렉트포함, 라디오박스 포함) 선택*/
 .input_row label,.input_row label .label_inner{position: relative;}
+.input_row label select {border: 1px solid #ccc; line-height: 40px; padding: 10px 20px; color:#333; background-color:#fafafa; outline: none; position: relative; position:relative;}
+.input_row label select option {font-size: 18px; color:inherit; padding: 15px 20px; font-weight: normal; margin-bottom: 8px; position: relative;}
+/* radio */
+input[type="radio"] {width: 15px; height: 15px; border: 1px solid #eee; position: relative; border-radius: 50%; box-sizing: content-box; padding: 3px;  vertical-align: middle; vertical-align: middle; line-height: 1 !important;}
+input[type="radio"]:checked,input[type="radio"]:focus {}
+input[type="radio"]:checked:before,input[type="radio"]:focus:before
+{content:''; display: inline-block; width: 100%; height: 100%; background-color: var(--point-color); border-radius: 50%; width: 70%; height: 70%; position: absolute; top:0; left:0; top: 15%; left: 15%;}
+input[type="radio"]+span {display: inline-block; padding: 0 15px 0 5px;vertical-align: middle; line-height: 1!important;position: relative; top: 2px;}
+
+/* privacy 약관 선택 */
+.privacy_txt { height: 100px; text-overflow: ellipsis; overflow: auto; border: 1px solid var(--border); padding: 15px;}
+.privacy_row { padding: 10px; margin: var(--container-paddiing); margin-bottom: 30px;}
+
+/* 기본 kboard용 선택 */
+.kboard-attr-row {margin:0 5%; padding-bottom: 30px; max-width: 100%; margin-bottom: 30px;}
+label > span  {display: inline-block; width: auto; line-height: 1 !important;}
+label > span+span { display: inline; width: auto; line-height: 1 !important;}
+br {display: block; width: 100%;}
+
+/* ------------------------------- input --------------------------- */
 
 /* 공통 헤더 (검색 정렬) */
 #global_list p,#global_list a,#global_list span{font-family: 'Nanum Gothic'; }
